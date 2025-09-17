@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe App Demo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        
+        .header {
+            background-color: #ff9800;
+            color: white;
+            padding: 16px 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .header h1 {
+            font-size: 24px;
+            font-weight: 500;
+        }
+        
+        .search-bar {
+            padding: 16px 20px;
+            background: white;
+        }
+        
+        .search-input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+        
+        .recipe-list {
+            padding: 16px 20px;
+        }
+        
+        .recipe-card {
+            background: white;
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 16px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .recipe-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        
+        .recipe-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 16px;
+        }
+        
+        .recipe-info {
+            flex: 1;
+        }
+        
+        .recipe-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #333;
+        }
+        
+        .recipe-description {
+            color: #666;
+            line-height: 1.4;
+            margin-bottom: 8px;
+        }
+        
+        .recipe-icon {
+            width: 80px;
+            height: 80px;
+            background-color: #fff3e0;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ff9800;
+            font-size: 32px;
+        }
+        
+        .recipe-tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+        
+        .tag {
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 500;
+            border: 1px solid;
+        }
+        
+        .tag.time {
+            background-color: #e3f2fd;
+            border-color: #2196f3;
+            color: #2196f3;
+        }
+        
+        .tag.servings {
+            background-color: #e8f5e8;
+            border-color: #4caf50;
+            color: #4caf50;
+        }
+        
+        .tag.difficulty-easy {
+            background-color: #e8f5e8;
+            border-color: #4caf50;
+            color: #4caf50;
+        }
+        
+        .tag.difficulty-medium {
+            background-color: #fff3e0;
+            border-color: #ff9800;
+            color: #ff9800;
+        }
+        
+        .tag.difficulty-hard {
+            background-color: #ffebee;
+            border-color: #f44336;
+            color: #f44336;
+        }
+        
+        .fab {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            width: 56px;
+            height: 56px;
+            background-color: #ff9800;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: transform 0.2s;
+            border: none;
+        }
+        
+        .fab:hover {
+            transform: scale(1.1);
+        }
+        
+        .demo-note {
+            background-color: #fff3e0;
+            border: 1px solid #ff9800;
+            padding: 16px;
+            margin: 16px 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .demo-note h3 {
+            color: #e65100;
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="demo-note">
+        <h3>🍳 Flutter Recipe App Demo</h3>
+        <p>This is a visual demonstration of the Flutter Recipe App. The actual app is built with Flutter and includes full functionality for adding, viewing, and managing recipes.</p>
+    </div>
+    
+    <div class="header">
+        <h1>My Recipes</h1>
+    </div>
+    
+    <div class="search-bar">
+        <input type="text" class="search-input" placeholder="Search recipes..." readonly>
+    </div>
+    
+    <div class="recipe-list">
+        <div class="recipe-card" onclick="alert('In the real Flutter app, this would navigate to the recipe details!')">
+            <div class="recipe-header">
+                <div class="recipe-info">
+                    <div class="recipe-title">Classic Spaghetti Carbonara</div>
+                    <div class="recipe-description">A traditional Italian pasta dish with eggs, cheese, and pancetta</div>
+                </div>
+                <div class="recipe-icon">🍝</div>
+            </div>
+            <div class="recipe-tags">
+                <span class="tag time">⏱️ 25 min</span>
+                <span class="tag servings">👥 4 servings</span>
+                <span class="tag difficulty-medium">⭐ Medium</span>
+            </div>
+        </div>
+        
+        <div class="recipe-card" onclick="alert('In the real Flutter app, this would navigate to the recipe details!')">
+            <div class="recipe-header">
+                <div class="recipe-info">
+                    <div class="recipe-title">Chocolate Chip Cookies</div>
+                    <div class="recipe-description">Soft and chewy homemade chocolate chip cookies</div>
+                </div>
+                <div class="recipe-icon">🍪</div>
+            </div>
+            <div class="recipe-tags">
+                <span class="tag time">⏱️ 26 min</span>
+                <span class="tag servings">👥 48 servings</span>
+                <span class="tag difficulty-easy">⭐ Easy</span>
+            </div>
+        </div>
+        
+        <div class="recipe-card" onclick="alert('In the real Flutter app, this would navigate to the recipe details!')">
+            <div class="recipe-header">
+                <div class="recipe-info">
+                    <div class="recipe-title">Chicken Tikka Masala</div>
+                    <div class="recipe-description">Creamy and flavorful Indian curry with tender chicken</div>
+                </div>
+                <div class="recipe-icon">🍛</div>
+            </div>
+            <div class="recipe-tags">
+                <span class="tag time">⏱️ 65 min</span>
+                <span class="tag servings">👥 4 servings</span>
+                <span class="tag difficulty-medium">⭐ Medium</span>
+            </div>
+        </div>
+    </div>
+    
+    <button class="fab" onclick="alert('In the real Flutter app, this would open the add recipe form!')">
+        ➕
+    </button>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchInput = document.querySelector('.search-input');
+            searchInput.addEventListener('click', function() {
+                alert('In the real Flutter app, this would enable search functionality across all recipes!');
+            });
+        });
+    </script>
+</body>
+</html>
